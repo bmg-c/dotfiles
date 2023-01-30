@@ -1,0 +1,151 @@
+{
+	"name": "direnv",
+	"displayName": "direnv",
+	"description": "unclutter your .profile",
+	"version": "0.10.1",
+	"preview": true,
+	"icon": "assets/icon.png",
+	"maintainers": [
+		{
+			"name": "The direnv VSCode extension team",
+			"url": "https://github.com/orgs/direnv/teams/vscode"
+		}
+	],
+	"contributors": [
+		{
+			"name": "cab404",
+			"url": "https://github.com/cab404"
+		},
+		{
+			"name": "mkhl",
+			"url": "https://github.com/mkhl"
+		}
+	],
+	"publisher": "mkhl",
+	"license": "0BSD",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/direnv/direnv-vscode"
+	},
+	"engines": {
+		"vscode": "^1.66.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": false,
+			"description": "direnv can run arbitrary shell code"
+		}
+	},
+	"contributes": {
+		"configuration": {
+			"title": "direnv",
+			"properties": {
+				"direnv.path.executable": {
+					"type": "string",
+					"default": "direnv",
+					"scope": "machine-overridable",
+					"description": "Path to the direnv executable"
+				},
+				"direnv.status.showChangesCount": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show the number of changed environment variables"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "direnv.allow",
+				"title": "direnv: Allow this .envrc file"
+			},
+			{
+				"command": "direnv.block",
+				"title": "direnv: Block this .envrc file"
+			},
+			{
+				"command": "direnv.create",
+				"title": "direnv: Create .envrc file"
+			},
+			{
+				"command": "direnv.open",
+				"title": "direnv: Open .envrc file"
+			},
+			{
+				"command": "direnv.reload",
+				"title": "direnv: Reload environment"
+			},
+			{
+				"command": "direnv.reset",
+				"title": "direnv: Reset and reload environment"
+			}
+		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "direnv.allow",
+					"when": "editorLangId == shellscript"
+				},
+				{
+					"command": "direnv.block",
+					"when": "editorLangId == shellscript"
+				}
+			]
+		}
+	},
+	"main": "./dist/extension.js",
+	"scripts": {
+		"version": "bin/version $npm_package_version && git add CHANGELOG.md",
+		"package": "vsce package --yarn --allow-star-activation",
+		"vscode:prepublish": "yarn run build --minify",
+		"clean": "rimraf ./out ./dist",
+		"prebuild": "yarn run clean",
+		"build": "esbuild ./src/extension.ts --bundle --outfile=dist/extension.js --platform=node --external:vscode",
+		"compile": "yarn run build --sourcemap",
+		"watch": "yarn run build --sourcemap --watch",
+		"compile-tests": "tsc",
+		"watch-tests": "tsc --watch",
+		"lint": "eslint --cache --cache-location ./node_modules/.cache/eslint/ ./src --ext ts",
+		"fix": "eslint --cache --cache-location ./node_modules/.cache/eslint/ ./src --ext ts --fix",
+		"pretest": "run-p compile compile-tests lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.0",
+		"@types/node": "16.x",
+		"@types/sinon": "^10.0.13",
+		"@types/vscode": "^1.66.0",
+		"@typescript-eslint/eslint-plugin": "^5.44.0",
+		"@typescript-eslint/parser": "^5.44.0",
+		"@vscode/test-electron": "^2.2.0",
+		"esbuild": "^0.15.15",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.8.0",
+		"rimraf": "^3.0.2",
+		"sinon": "^14.0.2",
+		"typescript": "^4.9.3",
+		"vsce": "^2.14.0"
+	},
+	"__metadata": {
+		"id": "e365e970-aeef-4dcd-8e4a-17306a27ab62",
+		"publisherId": "577d6c37-7054-4ca5-b4ce-9250409f3903",
+		"publisherDisplayName": "mkhl",
+		"targetPlatform": "universal",
+		"isApplicationScoped": false,
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"installedTimestamp": 1673943475284,
+		"preRelease": false
+	}
+}

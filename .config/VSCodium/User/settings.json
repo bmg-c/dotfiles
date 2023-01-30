@@ -1,0 +1,21 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Gruvbox Material Dark",
+    "keyboard.dispatch": "keyCode",
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+    "editor.fontSize": 19,
+    "editor.cursorStyle": "underline",
+    "editor.wordWrap": "on",
+    "editor.detectIndentation": false,
+    "git.confirmSync": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+        "с": true
+    },
+    "editor.unicodeHighlight.allowedLocales": {
+        "ru": true
+    },
+    "explorer.confirmDelete": false,
+    "editor.renderLineHighlight": "all"
+}
