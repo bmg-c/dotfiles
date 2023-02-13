@@ -1,0 +1,8 @@
+#/bin/sh
+
+echo "Mirrors are now being sorted. Please wait..."
+
+rate-mirrors --allow-root --disable-comments --save /etc/pacman.d/mirrorlist arch
+
+echo ""
+echo "Mirrors have been successfully sorted!"

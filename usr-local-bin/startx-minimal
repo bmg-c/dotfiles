@@ -1,0 +1,2 @@
+#!/bin/sh
+startx /home/ivan/.xinitrc-minimal

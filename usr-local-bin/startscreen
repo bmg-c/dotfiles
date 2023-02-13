@@ -1,0 +1,34 @@
+#/bin/sh
+
+xrandr --newmode "1600x720_60.00"  93.10  1600 1672 1840 2080  720 721 724 746  -HSync +Vsync
+xrandr --addmode DisplayPort-0 "1600x720_60.00"
+
+if [ "$(xrandr | grep "HDMI-A-0")" = "HDMI-A-0 disconnected (normal left inverted right x axis y axis)" ]
+then
+    xrandr --output eDP --primary --mode 2240x1400 --pos 1600x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --mode 1600x720_60.00 --pos 0x0 --rotate normal --output DisplayPort-1 --off
+else
+    xrandr --output eDP --primary --mode 2240x1400 --pos 1600x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 1600x0 --rotate normal --output DisplayPort-0 --mode 1600x720_60.00 --pos 0x0 --rotate normal --output DisplayPort-1 --off
+fi
+
+sh ~/scripts/bar/barkillall.sh
+sh ~/scripts/bar/bar.sh
+sh ~/scripts/bar/barsecond.sh
+python ~/scripts/wpchange.py
+
+x11vnc -clip 1600x720+0+0
+
+xrandr --output DisplayPort-0 --off
+xrandr --delmode DispalyPort-0 "1600x720_60.00"
+xrandr --rmmode "1600x720_60.00"
+
+if [ "$(xrandr | grep "HDMI-A-0")" = "HDMI-A-0 disconnected (normal left inverted right x axis y axis)" ]
+then
+    xrandr --output eDP --primary --mode 2240x1400 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off
+else
+    xrandr --output eDP --primary --mode 2240x1400 --pos 0x1080 --rotate normal --output HDMI-A-0 --mode 1920x1080 --pos 0x0 --rotate normal --output DisplayPort-0 --off --output DisplayPort-1 --off
+fi
+
+sh ~/scripts/bar/barkillall.sh
+sh ~/scripts/bar/bar.sh
+sh ~/scripts/bar/barsecond.sh
+python ~/scripts/wpchange.py

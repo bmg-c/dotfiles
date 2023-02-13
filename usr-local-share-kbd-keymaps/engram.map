@@ -1,0 +1,108 @@
+# engram.map
+# keymaps 0-2,4-6,8-9,12
+alt_is_meta
+include "qwerty-layout"
+include "linux-with-alt-and-altgr"
+include "compose.latin1"
+include "euro1.map"
+# include "us.map"
+strings as usual
+
+keycode  41 = bracketleft braceleft 
+    control keycode 41 = grave
+keycode   2 = one bar 
+    control keycode 2 = one 
+keycode   3 = two equal 
+    control keycode 3 = two
+keycode   4 = three asciitilde 
+    control keycode 4 = three
+keycode   5 = four plus 
+    control keycode 5 = four
+keycode   6 = five less 
+    control keycode 6 = five
+keycode   7 = six greater 
+    control keycode 7 = six
+keycode   8 = seven asciicircum 
+    control keycode 8 = seven
+keycode   9 = eight ampersand 
+    control keycode 9 = eight
+keycode  10 = nine percent 
+    control keycode 10 = nine
+keycode  11 = zero asterisk 
+    control keycode 11 = zero
+keycode  12 = bracketright braceright 
+    control keycode 12 = minus
+keycode  13 = slash backslash 
+    control keycode 13 = equal
+
+keycode  16 = b B 
+    control keycode 16 = Control_q
+keycode  17 = y Y 
+    control keycode 17 = Control_w
+keycode  18 = o O 
+    control keycode 18 = Control_e
+keycode  19 = u U 
+    control keycode 19 = Control_r
+keycode  20 = apostrophe parenleft 
+    control keycode 20 = Control_t
+keycode  21 = quotedbl parenright 
+    control keycode 21 = Control_y
+keycode  22 = l L 
+    control keycode 22 = Control_u
+keycode  23 = d D 
+    control keycode 23 = Control_i
+keycode  24 = w W 
+    control keycode 24 = Control_o
+keycode  25 = v V 
+    control keycode 25 = Control_p
+keycode  26 = z Z 
+    control keycode 26 = bracketleft
+keycode  27 = numbersign dollar asciitilde 
+    control keycode 27 = bracketright
+
+keycode  30 = c C 
+    control keycode 30 = Control_a
+keycode  31 = i I 
+    control keycode 31 = Control_s
+keycode  32 = e E 
+    control keycode 32 = Control_d
+keycode  33 = a A 
+    control keycode 33 = Control_f
+keycode  34 = comma semicolon 
+    control keycode 34 = Control_g
+keycode  35 = period colon 
+    control keycode 35 = Control_h
+keycode  36 = h H 
+    control keycode 36 = Control_j
+keycode  37 = t T
+    control keycode 37 = Control_k
+keycode  38 = s S 
+    control keycode 38 = Control_s
+keycode  39 = n N 
+    control keycode 39 = semicolon
+keycode  40 = q Q 
+    control keycode 40 = quotedbl
+keycode  43 = at grave  
+    control keycode 43 = Control_backslash 
+
+keycode  44 = g G 
+    control keycode 44 = Control_z
+keycode  45 = x X 
+    control keycode 45 = Control_x
+keycode  46 = j J 
+    control keycode 46 = Control_c
+keycode  47 = k K 
+    control keycode 47 = Control_v
+keycode  48 = minus underscore 
+    control keycode 48 = Control_b
+keycode  49 = question exclam 
+    control keycode 49 = Control_n
+keycode  50 = r R 
+    control keycode 50 = Control_m
+keycode  51 = m M 
+    control keycode 51 = comma
+keycode  52 = f F 
+    control keycode 52 = period
+keycode  53 = p P 
+    control keycode 53 = slash
+
