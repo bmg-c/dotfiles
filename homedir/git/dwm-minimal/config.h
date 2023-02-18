@@ -72,10 +72,10 @@ static const char *brightdef[]   =      { "brightnessctl", "set", "180", NULL };
 
 static const char *screenshot[]  =      { "flameshot", "gui", NULL };
 
-static const char *setkbqwerty[] =      { "sh", "/home/ivan/scripts/setkblayout.sh", "qwerty", NULL };
-static const char *setkbengram[] =      { "sh", "/home/ivan/scripts/setkblayout.sh", "engram", NULL };
+static const char *setkbqwerty[] =      { "setkblayout", "qwerty", NULL };
+static const char *setkbengram[] =      { "setkblayout", "engram", NULL };
 
-static const char *startscreen[] = { "sh", "/home/ivan/scripts/startscreen.sh", NULL };
+static const char *startscreen[] = { "startscreen", NULL };
 
 
 

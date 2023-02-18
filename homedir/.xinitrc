@@ -3,7 +3,7 @@
 #     sleep 5
 # done & 
 
-sh ~/scripts/setkblayout.sh engram &
+setkblayout engram &
 xset m 1 0 & xset r rate 340 38 &
 
 exec dwm

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-~/scripts/setkblayout engram 			    # Keyboard layout set
+setkblayout engram 			    # Keyboard layout set
 xset r rate 340 38 				            # Keyboard repeat rate set
 brightnessctl set 180 				        # Default brightness set
 dbus-update-activation-environment --all 	# For SSH and else to work
@@ -13,12 +13,12 @@ if [ "$(xrandr | grep "HDMI-A-0")" = "HDMI-A-0 disconnected (normal left inverte
 then
     xrdb ~/.Xresources  # Load HiDPI settings
 
-    ~/scripts/wpchange.py &
+    wpchange &
     picom --config ~/.config/picom/picom.conf &
     ~/scripts/bar/bar.sh &
     xrandr --output eDP --primary --mode 2240x1400 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --off --output DisplayPort-1 --off &
 else
-    ~/scripts/wpchange.py &
+    wpchange &
     picom --config ~/.config/picom/picom.conf &
     ~/scripts/bar/bar.sh &
     ~/scripts/bar/barsecond.sh &

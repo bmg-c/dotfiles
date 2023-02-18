@@ -13,7 +13,7 @@ fi
 sh ~/scripts/bar/barkillall.sh
 sh ~/scripts/bar/bar.sh
 sh ~/scripts/bar/barsecond.sh
-python ~/scripts/wpchange.py
+wpchange
 
 x11vnc -clip 1600x720+0+0
 
@@ -31,4 +31,4 @@ fi
 sh ~/scripts/bar/barkillall.sh
 sh ~/scripts/bar/bar.sh
 sh ~/scripts/bar/barsecond.sh
-python ~/scripts/wpchange.py
+wpchange

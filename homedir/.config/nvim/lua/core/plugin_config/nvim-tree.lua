@@ -4,4 +4,11 @@ vim.g.loaded_netrwPlugin = 1
 
 require("nvim-tree").setup()
 
-vim.keymap.set('n', '<C-n>', ':NvimTreeFindFileToggle<CR>')
+vim.g.nvim_tree_respect_buf_cwd = 1
+
+require("nvim-tree").update_focused_file =
+	{
+		enable = true,
+		update_cwd = true,
+	}, 
+vim.keymap.set("n", "<C-n>", ":NvimTreeFindFileToggle<CR>")

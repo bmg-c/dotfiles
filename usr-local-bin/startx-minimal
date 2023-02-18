@@ -1,2 +1,2 @@
 #!/bin/sh
-startx /home/ivan/.xinitrc-minimal
+startx "$( getent passwd "$USER" | cut -d: -f6 )/.xinitrc-minimal"
