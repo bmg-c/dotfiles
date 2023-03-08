@@ -27,6 +27,16 @@ static const Rule rules[] = {
 	 */
 	/* class  instance  title  tags mask  iscentered,  isfloating  monitor */
 	{ NULL,   NULL,     NULL,  0,         0,           0,          -1 },
+	{ "firefox",   "Navigator",     NULL,  1 << 1,         0,           0,          -1 },
+	{ "Pcmanfm",   "pcmanfm",     NULL,  0,         1,           1,          -1 },
+	{ "MuPDF",   "mupdf",     NULL,  0,         1,           1,          -1 },
+	{ "YouTube Music",   "youtube music",     NULL,  1 << 3,         0,           0,          -1 },
+	{ "discord",   "discord",     NULL,  1 << 4,         0,           0,          -1 },
+	{ "easyeffects",   "easyeffects",     NULL,  1 << 8,         0,           0,          -1 },
+	{ "Steam",   "Steam",     NULL,  1 << 7,         0,           0,          -1 },
+	{ NULL,   NULL,     "Steam",  1 << 7,         1,           0,          -1 },
+	{ "PrismLauncher",   "prismlauncher",     NULL,  1 << 7,         0,           0,          -1 },
+	{ "KotatogramDesktop",   "kotatogram-desktop",     NULL,  1 << 4,         0,           0,          -1 },
 };
 
 /* layout(s) */
